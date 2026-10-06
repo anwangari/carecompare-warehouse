@@ -1,0 +1,118 @@
+# ---------------------------------------------------------------------------
+# Private working notes: build plan, specs, full decision log, study notes.
+# Kept locally and in the Claude project. Never commit; never `git add -f`.
+# ---------------------------------------------------------------------------
+notes/
+
+# ---------------------------------------------------------------------------
+# Secrets: nothing in this block may ever be committed
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials
+credentials.json
+secrets.yml
+.aws/
+
+# ---------------------------------------------------------------------------
+# Data: raw and processed data belongs in S3, not in git
+# ---------------------------------------------------------------------------
+data/
+!data/.gitkeep
+*.csv
+*.tsv
+*.parquet
+*.zip
+*.gz
+# Small committed exceptions: CI fixtures and dbt seeds
+!tests/fixtures/**/*.csv
+!dbt/seeds/**/*.csv
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.so
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+.python-version
+
+# Testing and lint caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------------------
+# Jupyter
+# ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# dbt
+# ---------------------------------------------------------------------------
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+dbt/.user.yml
+target/
+dbt_packages/
+logs/
+.user.yml
+# profiles.yml holds credentials; commit profiles.yml.example instead
+profiles.yml
+!profiles.yml.example
+
+# ---------------------------------------------------------------------------
+# Airflow
+# ---------------------------------------------------------------------------
+airflow.db
+airflow.cfg
+airflow-webserver.pid
+webserver_config.py
+standalone_admin_password.txt
+airflow/logs/
+
+# ---------------------------------------------------------------------------
+# Docker
+# ---------------------------------------------------------------------------
+docker-compose.override.yml
+
+# ---------------------------------------------------------------------------
+# Terraform (if added later)
+# ---------------------------------------------------------------------------
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+*.tfvars
+!*.tfvars.example
+
+# ---------------------------------------------------------------------------
+# Editors, OS, and WSL
+# ---------------------------------------------------------------------------
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+*:Zone.Identifier
+
+# ---------------------------------------------------------------------------
+# Diagram tool autosaves (keep the source files)
+# ---------------------------------------------------------------------------
+*.excalidraw.bak
+~$*.drawio
