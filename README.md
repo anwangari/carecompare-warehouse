@@ -4,7 +4,7 @@ CMS publishes the quality of every U.S. nursing home monthly, then overwrites
 it. This warehouse keeps the history, joins it to what Medicare pays, and
 answers one question per release.
 
-[Live model docs](#) · [3-minute walkthrough](#) · [Decisions](docs/DECISIONS.md)
+[Live Model docs](#) · [Video Walkthrough](#) · [Decisions](docs/DECISIONS.md) . [As I Build](docs/WHAT_BROKE.md)
 
 ---
 
