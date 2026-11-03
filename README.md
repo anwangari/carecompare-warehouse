@@ -52,7 +52,7 @@ Tested on WSL 2 with Docker Desktop.
 ```bash
 git clone https://github.com/anwangari/carecompare-warehouse.git && cd carecompare-warehouse
 cp .env.example .env && echo "AIRFLOW_UID=$(id -u)" >> .env   # add AWS keys
-docker compose up -d                                            # Airflow at localhost:8080
+docker compose up -d --wait                                     # Airflow at localhost:8080
 ```
 
 No AWS account: set `LOCAL_MODE=true` and raw files land in `./data`.
